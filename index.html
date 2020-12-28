@@ -25,11 +25,11 @@
                       <span class="header__link--span">Report</span>
                 </a></li>
                 </a></li>
-                <li class="header__items"><a href="#" class="header__link">
+                <li class="header__items"><a href="#" class="header__link header__link--settings">
                     <svg class="header__icon">
                         <use xlink:href="img/sprite.svg#icon-settings"></use>
                       </svg>
-                      <span class="header__link--span">Settings</span>
+                      <span class="header__link--span ">Settings</span>
                 </a></li>
                 </a></li>
                 <li class="header__items"><a href="$" class="header__link header__link--login">
@@ -44,14 +44,14 @@
         <div class="main">
             <div class="main__pomodoroMethod">
                 <ul class="pomodoro__list">
-                    <li class="pomodoro__item">Pomodoro</li>
-                    <li class="pomodoro__item">Quick break</li>
-                    <li class="pomodoro__item">Long break</li>
+                    <button class="pomodoro__item pomodoro--time pomodoro__active">Pomodoro</button>
+                    <button class="pomodoro__item pomodoro--quickBreak ">Quick break</button>
+                    <button class="pomodoro__item pomodoro--longBreak">Long break</button>
                 </ul>
             </div>
             <div class="main__clock">
                 <div class="main__clock--clock">
-                    <span class="clock">25:00</span>
+                    <span class="clock"></span>
                 </div>
                 <div class="main__clock--button">
                         <button class="start ">start</button>
@@ -62,5 +62,36 @@
 
     </div>
 
+    <div class="settings hidden">
+            <div class="settings__header">
+                <div class="settings__header--title card">
+                    <div class="card-body">
+                     <span class="settings__timeSettings"> Time settings</span>
+                      
+                    </div>
+                    <button type="button" class="btn-close settings__close" aria-label="Close"></button>
+                  </div>
+            </div>
+            <div class="settings__time">
+                <div class="settings__header--minutes card">
+                    <div class="card-body">
+                      Time (minutes)
+                    </div>
+                    <ul class="settings__list">
+                        <li class="settings__item">
+                             <span class="settings__item--span">Pomodoro</span><input type="number"class="settings__input settings__input--pomodoro"></li>
+                        <li class="settings__item"> 
+                            <span class="settings__item--span">Quick Break</span>
+                            <input type="number"class="settings__input settings__input--quickBreak"></li>
+
+
+                        <li class="settings__item"> <span class="settings__item--span">Long Break</span><input type="number"class="settings__input settings__input--longBreak" ></li>
+                    </ul>
+                </div>
+
+
+            </div>
+            <button class="settings__ok">ok</button>
+    </div>
 </body>
 </html>
