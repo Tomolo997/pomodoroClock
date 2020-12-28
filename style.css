@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  font-family: "Roboto Mono", monospace;
+  font-family: "Coda", cursive;
   color: black;
   font-weight: 600;
   background-color: rgba(206, 101, 101, 0.76);
@@ -146,7 +146,7 @@ body {
 }
 
 .main__clock--clock {
-  font-size: 13rem;
+  font-size: 18rem;
   color: white;
 }
 

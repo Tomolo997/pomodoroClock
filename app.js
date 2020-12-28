@@ -109,14 +109,18 @@ const main = document.querySelector(".main");
 const pomodoroTime = document.querySelector(".pomodoro--time");
 const pomodoroQuickBreak = document.querySelector(".pomodoro--quickBreak");
 const pomodoroLongBreak = document.querySelector(".pomodoro--longBreak");
-
+const pomodoroItem = document.querySelectorAll(".pomodoro__item");
 pomodoroQuickBreak.addEventListener("click", function (e) {
   pomodoroTime.classList.remove("pomodoro__active");
   pomodoroLongBreak.classList.remove("pomodoro__active");
   e.target.classList.add("pomodoro__active");
   seconds = 0;
+  pomodoroItem.forEach((el) => {
+    el.style.backgroundColor = "rgba(70, 142, 145)";
+    el.style.color = "white";
+  });
   clock.textContent = `${state.quickBreak.minutes}:0${seconds}`;
-  document.body.style.backgroundColor = "rgba(70, 142, 145)";
+  document.body.style.backgroundColor = "rgba(70, 142, 145,0.76)";
 });
 
 pomodoroTime.addEventListener("click", function (e) {
@@ -124,18 +128,26 @@ pomodoroTime.addEventListener("click", function (e) {
   pomodoroLongBreak.classList.remove("pomodoro__active");
   e.target.classList.add("pomodoro__active");
   seconds = 0;
-
+  pomodoroItem.forEach((el) => {
+    el.style.backgroundColor = "rgba(206, 101, 101, 0.76) ";
+    el.style.color = "white";
+  });
   clock.textContent = `${state.pomodoro.minutes}:0${seconds}`;
   document.body.style.backgroundColor = "rgba(206, 101, 101, 0.76)";
 });
-
+console.log(pomodoroItem);
 pomodoroLongBreak.addEventListener("click", function (e) {
   pomodoroQuickBreak.classList.remove("pomodoro__active");
   pomodoroTime.classList.remove("pomodoro__active");
   e.target.classList.add("pomodoro__active");
   seconds = 0;
+  pomodoroItem.forEach((el) => {
+    el.style.backgroundColor = "rgba(67, 126, 168,0.76) ";
+    el.style.color = "white";
+  });
+
   clock.textContent = `${state.longBreak.minutes}:0${seconds}`;
-  document.body.style.backgroundColor = "rgba(67, 126, 168)";
+  document.body.style.backgroundColor = "rgba(67, 126, 168,0.76)";
 });
 
 const settingsButton = document.querySelector(".header__link--settings");
