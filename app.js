@@ -53,7 +53,6 @@ let clockTime;
 buttonStart.addEventListener("click", function () {
   buttonStop.classList.remove("hidden");
   buttonStart.classList.add("hidden");
-  console.log(clock.textContent.split(":"));
   minutes = clock.textContent.split(":")[0];
   timer = true;
   if (pomodoroQuickBreak.classList.contains("pomodoro__active")) {
@@ -84,11 +83,8 @@ buttonStart.addEventListener("click", function () {
         alert("Time out");
         clearInterval(clockTime);
       }
-      if (minutes < 10) {
-        minutesOnScreen = "0" + minutes;
-      } else {
-        minutesOnScreen = minutes;
-      }
+
+      minutesOnScreen = minutes;
 
       clock.textContent = `${minutesOnScreen}:${secondsOnScreen}`;
     }, 1000);
